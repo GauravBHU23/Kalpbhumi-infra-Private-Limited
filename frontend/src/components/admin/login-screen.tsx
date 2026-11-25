@@ -6,6 +6,7 @@ import { AdminApiError, adminFetch, type AdminUser } from "../../lib/admin-api";
 import type { Portal } from "./admin-shell";
 import { CinematicSlides, type CinematicSlide } from "../cinematic-slides";
 import { BotCheck } from "../bot-check";
+import { COMPANY_NAME, COMPANY_WORDMARK } from "../../lib/site-config";
 
 export const LOGIN_SLIDES: CinematicSlide[] = [
   { src: "1429497419816-9ca5cfb4571a", alt: "" },
@@ -17,7 +18,7 @@ export const LOGIN_SLIDES: CinematicSlide[] = [
 
 const COPY: Record<Portal, { title: string; tag: string; eyebrow: string; heading: [string, string]; lead: string; intro: string; button: string }> = {
   admin: {
-    title: "Admin sign in | Kalpbhumi Infra",
+    title: `Admin sign in | ${COMPANY_NAME}`,
     tag: "ADMINISTRATION",
     eyebrow: "ADMINISTRATOR ACCESS",
     heading: ["Build with clarity.", "Lead with confidence."],
@@ -26,7 +27,7 @@ const COPY: Record<Portal, { title: string; tag: string; eyebrow: string; headin
     button: "Sign in to admin panel",
   },
   staff: {
-    title: "Staff sign in | Kalpbhumi Infra",
+    title: `Staff sign in | ${COMPANY_NAME}`,
     tag: "STAFF PORTAL",
     eyebrow: "EMPLOYEE ACCESS",
     heading: ["One team.", "One workspace."],
@@ -76,11 +77,11 @@ export function LoginScreen({ portal }: { portal: Portal }) {
 
   return (
     <main className="adm-login">
-      <section className="adm-login-story" aria-label="Kalpbhumi Infra">
+      <section className="adm-login-story" aria-label={COMPANY_NAME}>
         <CinematicSlides slides={LOGIN_SLIDES} interval={6000} sizes="(max-width: 900px) 100vw, 55vw" />
-        <a className="adm-brand" href="/" aria-label="Kalpbhumi Infra home">
+        <a className="adm-brand" href="/" aria-label={`${COMPANY_NAME} home`}>
           <span className="adm-brand-mark adm-brand-logo" aria-hidden="true"><img src="/kalpbhumi-logo.png" alt="" /></span>
-          <span><strong>KALPBHUMI INFRA</strong><small>{copy.tag}</small></span>
+          <span><strong>{COMPANY_WORDMARK} INFRA</strong><small>{copy.tag}</small></span>
         </a>
         <div>
           <p className="adm-eyebrow">{copy.eyebrow}</p>

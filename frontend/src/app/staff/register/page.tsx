@@ -5,6 +5,7 @@ import { AdminApiError, adminFetch } from "../../../lib/admin-api";
 import { CinematicSlides } from "../../../components/cinematic-slides";
 import { LOGIN_SLIDES } from "../../../components/admin/login-screen";
 import { BotCheck } from "../../../components/bot-check";
+import { COMPANY_NAME, COMPANY_WORDMARK } from "../../../lib/site-config";
 
 type Values = {
   first_name: string; last_name: string; username: string; email: string;
@@ -21,7 +22,7 @@ export default function StaffRegisterPage() {
   const [done, setDone] = useState(false);
   const [botToken, setBotToken] = useState("");
 
-  useEffect(() => { document.title = "Staff registration | Kalpbhumi Infra"; }, []);
+  useEffect(() => { document.title = `Staff registration | ${COMPANY_NAME}`; }, []);
 
   const set = (key: keyof Values) => (e: { target: { value: string } }) => setValues((v) => ({ ...v, [key]: e.target.value }));
 
@@ -58,11 +59,11 @@ export default function StaffRegisterPage() {
 
   return (
     <main className="adm-login">
-      <section className="adm-login-story" aria-label="Kalpbhumi Infra">
+      <section className="adm-login-story" aria-label={COMPANY_NAME}>
         <CinematicSlides slides={LOGIN_SLIDES} interval={6000} sizes="(max-width: 900px) 100vw, 55vw" />
-        <a className="adm-brand" href="/" aria-label="Kalpbhumi Infra home">
+        <a className="adm-brand" href="/" aria-label={`${COMPANY_NAME} home`}>
           <span className="adm-brand-mark adm-brand-logo" aria-hidden="true"><img src="/kalpbhumi-logo.png" alt="" /></span>
-          <span><strong>KALPBHUMI INFRA</strong><small>STAFF PORTAL</small></span>
+          <span><strong>{COMPANY_WORDMARK} INFRA</strong><small>STAFF PORTAL</small></span>
         </a>
         <div>
           <p className="adm-eyebrow">JOIN THE WORKSPACE</p>

@@ -33,7 +33,7 @@ export default function ProjectsAdminPage() {
       endpoint="projects"
       singular="Project"
       fields={fields}
-      defaults={{ category: "roads", status: "ongoing", client_type: "government", published: false, featured: false }}
+      defaults={{ category: "roads", status: "completed", client_type: "government", published: false, featured: false }}
       rowTitle={(r) => r.name}
       searchText={(r) => `${r.name} ${r.location} ${r.client_name}`}
       filters={[
@@ -44,7 +44,7 @@ export default function ProjectsAdminPage() {
         { label: "Project", render: (r) => <strong>{r.name}</strong> },
         { label: "Category", render: (r) => labelFor(PROJECT_CATEGORIES, r.category) },
         { label: "Location", render: (r) => r.location },
-        { label: "Status", render: (r) => <span className={`adm-pill${r.status === "completed" ? " adm-pill-ok" : r.status === "ongoing" ? " adm-pill-warn" : ""}`}>{labelFor(PROJECT_STATUSES, r.status)}</span> },
+        { label: "Status", render: (r) => <span className={`adm-pill${r.status === "completed" ? " adm-pill-ok" : ""}`}>{labelFor(PROJECT_STATUSES, r.status)}</span> },
         { label: "Completed", render: (r) => formatDate(r.completion_date) },
         { label: "Media", render: (r) => `${r.images?.length ?? 0} items` },
         { label: "Website", render: (r) => <span className={`adm-pill${r.published ? " adm-pill-ok" : " adm-pill-off"}`}>{r.published ? "Published" : "Draft"}{r.featured ? " ★" : ""}</span> },

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { LEGAL_CONTACT as C, LegalPage, type LegalSection } from "../../components/layout/legal-page";
+import { COMPANY_NAME } from "../../lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Kalpbhumi Infra",
-  description: "How Kalpbhumi Infra collects, uses, stores and protects personal information shared through this website.",
+  title: `Privacy Policy | ${COMPANY_NAME}`,
+  description: `How ${COMPANY_NAME} collects, uses, stores and protects personal information shared through this website.`,
 };
 
 const sections: LegalSection[] = [
@@ -27,6 +28,7 @@ const sections: LegalSection[] = [
         <ul>
           <li><strong>Enquiry form:</strong> your name, email address, phone number (optional), the service you are interested in, request type, project location, budget range (optional) and your message.</li>
           <li><strong>Staff portal accounts:</strong> for employees who register, we store name, username, work email, mobile number, designation and a securely hashed password. We never store passwords in readable form.</li>
+          <li><strong>Aggregate visit count:</strong> a first-party local-storage flag keeps this browser from being counted more than once. We do not send a browser ID or personal identity to the server; it stores only the aggregate total.</li>
           <li><strong>Technical data:</strong> your IP address and basic request details, used briefly to prevent spam, abuse and repeated sign-in attempts.</li>
         </ul>
         <p>We do not ask for sensitive data such as bank details, Aadhaar numbers or health information through this website.</p>
@@ -62,8 +64,9 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          The public website does not use advertising or analytics cookies. The staff and admin portals use strictly necessary
-          cookies only: a session cookie to keep you signed in and a security (CSRF) cookie that protects forms.
+          The public website does not use advertising or analytics cookies. It uses a first-party local-storage flag only to
+          prevent repeat counts from the same browser in the aggregate homepage visit total. The staff and admin portals use
+          strictly necessary cookies only: a session cookie to keep you signed in and a security (CSRF) cookie that protects forms.
         </p>
         <p>
           Some content is loaded from trusted third parties, which may receive your IP address when your browser loads it:
@@ -160,7 +163,7 @@ export default function PrivacyPage() {
       eyebrow="LEGAL"
       title="Privacy Policy"
       intro="How we collect, use and protect the information you share with us through this website."
-      updated="21 November 2026"
+      updated="26 November 2026"
       sections={sections}
     />
   );

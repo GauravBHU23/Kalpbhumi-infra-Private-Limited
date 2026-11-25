@@ -13,7 +13,6 @@ export const PROJECT_CLIENT_TYPES: Option[] = [
   { value: "third_party", label: "Third-party" },
 ];
 export const PROJECT_STATUSES: Option[] = [
-  { value: "ongoing", label: "Ongoing" },
   { value: "completed", label: "Completed" },
   { value: "upcoming", label: "Upcoming" },
 ];

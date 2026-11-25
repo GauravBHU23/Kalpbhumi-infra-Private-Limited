@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "../admin/admin.css";
+import { COMPANY_NAME } from "../../lib/site-config";
 
 export const metadata: Metadata = {
-  title: { default: "Staff portal | Kalpbhumi Infra", template: "%s | Kalpbhumi Infra Staff" },
+  title: { default: `Staff portal | ${COMPANY_NAME}`, template: `%s | ${COMPANY_NAME} Staff` },
   robots: { index: false, follow: false },
 };
 

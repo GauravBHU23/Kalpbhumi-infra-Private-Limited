@@ -1,8 +1,9 @@
+from django.db.models import F
 from rest_framework import generics, throttling, status
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
-from django.shortcuts import get_object_or_404
-from .models import CompanyProfile, Enquiry, Project, TeamMember, Tender
+from rest_framework.views import APIView
+from .models import CompanyProfile, Enquiry, Project, SiteVisitCounter, TeamMember, Tender
 from .serializers import CompanyProfileSerializer, EnquirySerializer, ProjectSerializer, TeamMemberSerializer, TenderSerializer
 from .bot_verification import verify_turnstile
 
@@ -11,7 +12,23 @@ class CompanyProfileView(generics.RetrieveAPIView):
     permission_classes = [AllowAny]
 
     def get_object(self):
-        return get_object_or_404(CompanyProfile.objects.order_by("id"))
+        return CompanyProfile.objects.order_by("id").first() or CompanyProfile()
+
+
+class SiteVisitCountView(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        counter = SiteVisitCounter.objects.get(pk=1)
+        return Response({"total_visits": counter.total_visits})
+
+    def post(self, request):
+        updated = SiteVisitCounter.objects.filter(pk=1).update(total_visits=F("total_visits") + 1)
+        if not updated:
+            raise RuntimeError("The site visit counter has not been initialized.")
+        counter = SiteVisitCounter.objects.get(pk=1)
+        return Response({"total_visits": counter.total_visits})
+
 
 class ProjectList(generics.ListAPIView):
     queryset = Project.objects.filter(published=True).prefetch_related("images")

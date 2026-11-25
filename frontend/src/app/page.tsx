@@ -29,7 +29,7 @@ export default function HomePage() {
         <TeamSection />
         <ContactSection />
       </main>
-      <SiteFooter />
+      <SiteFooter recordHomepageVisit />
     </SiteInteractions>
   );
 }

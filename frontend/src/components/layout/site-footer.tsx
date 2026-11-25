@@ -1,3 +1,6 @@
+import { COMPANY_NAME, COMPANY_WORDMARK, WEBSITE_LAST_UPDATED } from "../../lib/site-config";
+import { SiteVisitCount } from "./site-visit-count";
+
 const COMPANY_LINKS = [
   ["About us", "/#about"],
   ["Projects", "/#projects"],
@@ -14,15 +17,15 @@ const SERVICE_LINKS = [
   "Architecture & drawings",
 ] as const;
 
-export function SiteFooter() {
+export function SiteFooter({ recordHomepageVisit = false }: { recordHomepageVisit?: boolean } = {}) {
   const year = new Date().getFullYear();
   return (
     <footer className="site-footer ft">
       <div className="container ft-main">
         <div className="ft-brand-col">
-          <a className="brand ft-brand" href="/#top" aria-label="Kalpbhumi Infra home">
+          <a className="brand ft-brand" href="/#top" aria-label={`${COMPANY_NAME} home`}>
             <span className="brand-mark brand-logo" aria-hidden="true"><img src="/kalpbhumi-logo.png" alt="" /></span>
-            <span className="brand-copy"><strong>KALPBHUMI</strong><small>INFRA</small></span>
+            <span className="brand-copy" data-company-brand><strong>{COMPANY_WORDMARK}</strong><small>INFRA</small></span>
           </a>
           <p className="ft-badge">Registered Govt &amp; Private Civil Contractor</p>
           <p className="ft-tagline">Building the way forward.<br />With people, purpose and pride.</p>
@@ -57,7 +60,9 @@ export function SiteFooter() {
 
       <div className="container ft-bottom">
         <div className="ft-bottom-text">
-          <span>© {year} Kalpbhumi Infra. All rights reserved.</span>
+          <span>© {year} {COMPANY_NAME}. All rights reserved.</span>
+          <span className="ft-meta">Total Visitor Counts: <SiteVisitCount recordVisit={recordHomepageVisit} /></span>
+          <span className="ft-meta">Last Updated: <strong>{WEBSITE_LAST_UPDATED}</strong></span>
           <span className="ft-credit">Designed &amp; developed by <strong>Gaurav Kumar</strong></span>
         </div>
         <a className="back-top ft-top" href="#top" aria-label="Back to top">↑</a>

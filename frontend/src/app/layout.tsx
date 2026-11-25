@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { ClickLoader } from "../components/click-loader";
+import { COMPANY_NAME } from "../lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Kalpbhumi Infra | Building the way forward",
-  description: "Kalpbhumi Infra is a registered Government & private civil contractor in Varanasi, delivering dependable roads, buildings and civil engineering works.",
+  title: `${COMPANY_NAME} | Building the way forward`,
+  description: `${COMPANY_NAME} delivers building construction, road infrastructure and civil engineering works.`,
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
 };
 

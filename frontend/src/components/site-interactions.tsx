@@ -2,6 +2,7 @@
 
 import { useEffect, type ReactNode } from "react";
 import { apiGet, apiPost, publicAssetUrl } from "../lib/api";
+import { COMPANY_NAME } from "../lib/site-config";
 
 export function SiteInteractions({ children }: { children: ReactNode }) {
   useEffect(() => {
@@ -70,7 +71,14 @@ export function SiteInteractions({ children }: { children: ReactNode }) {
         const mapUrl = String(profile.map_embed_url || "");
         if (mapUrl.startsWith("https://")) document.querySelector<HTMLIFrameElement>("[data-company-map]")?.setAttribute("src", mapUrl);
         if (profile.company_name) {
-          document.querySelectorAll<HTMLElement>(".brand-copy strong").forEach((element) => { element.textContent = String(profile.company_name).toUpperCase(); });
+          document.querySelectorAll<HTMLElement>("[data-company-brand]").forEach((element) => {
+            const words = String(profile.company_name).trim().split(/\s+/);
+            const suffix = words.length > 1 ? words.pop() || "" : "";
+            const strong = element.querySelector("strong");
+            const small = element.querySelector("small");
+            if (strong) strong.textContent = (words.join(" ") || suffix).toUpperCase();
+            if (small) small.textContent = suffix.toUpperCase();
+          });
           document.title = `${profile.company_name} | Building the way forward`;
         }
         const stats = document.querySelectorAll<HTMLElement>(".trust-grid > div:not(.trust-note)");
@@ -153,7 +161,7 @@ export function SiteInteractions({ children }: { children: ReactNode }) {
               link.rel = "noopener noreferrer";
               const image = document.createElement("img");
               image.src = publicAssetUrl(item.image_url);
-              image.alt = item.alt_text || "Kalpbhumi Infra project photo";
+              image.alt = item.alt_text || `${COMPANY_NAME} project photo`;
               image.loading = "lazy";
               link.append(image);
               figure.append(link);
@@ -188,7 +196,10 @@ export function SiteInteractions({ children }: { children: ReactNode }) {
           list.append(row);
         });
         list.append(text("p", "tender-note", "For tender documents or clarification, contact our team."));
-      } catch { /* Keep the editorial tender list available when the API is offline. */ }
+      } catch {
+        const note = document.querySelector<HTMLElement>(".tender-note");
+        if (note) note.textContent = "Opportunities are temporarily unavailable. Please try again later.";
+      }
     };
     const loadTeam = async () => {
       try {
@@ -213,8 +224,11 @@ export function SiteInteractions({ children }: { children: ReactNode }) {
           card.append(photo, info);
           grid.append(card);
         });
-        document.querySelector(".team-disclaimer")?.remove();
-      } catch { /* Keep the editorial team profiles available when the API is offline. */ }
+        grid.querySelector(".team-empty")?.remove();
+      } catch {
+        const empty = document.querySelector<HTMLElement>(".team-empty");
+        if (empty) empty.textContent = "Team profiles are temporarily unavailable. Please try again later.";
+      }
     };
     void loadProjects();
     void loadTenders();

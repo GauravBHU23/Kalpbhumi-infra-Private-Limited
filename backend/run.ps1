@@ -10,7 +10,7 @@ if (-not (Test-Path -LiteralPath $backendPython)) {
 try {
     $health = Invoke-WebRequest -Uri "http://127.0.0.1:8000/api/projects/" -UseBasicParsing -TimeoutSec 2
     if ($health.StatusCode -eq 200) {
-        Write-Host "Kalpbhumi backend is already running at http://127.0.0.1:8000"
+        Write-Host "Kalpbhumi Infra backend is already running at http://127.0.0.1:8000"
         exit 0
     }
 } catch {

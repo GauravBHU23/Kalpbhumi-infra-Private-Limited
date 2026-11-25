@@ -1,4 +1,5 @@
 import { CinematicSlides, type CinematicSlide } from "../cinematic-slides";
+import { COMPANY_NAME } from "../../lib/site-config";
 
 // Illustrative Unsplash photography; each one was checked to show construction / infrastructure work.
 const HERO_SLIDES: CinematicSlide[] = [
@@ -18,7 +19,7 @@ export function HeroSection() {
         <p className="eyebrow light"><span></span> BUILT ON TRUST. BUILT TO LAST.</p>
         <h1>Building the<br />way <em>forward.</em></h1>
         <p className="hero-copy">We shape the infrastructure that moves communities, connects opportunity and stands the test of time.</p>
-        <div className="hero-actions"><a className="button button-lime" href="#projects">Explore our work <span>↗</span></a><a className="text-link light-link" href="#about">Discover Kalpbhumi <span>↓</span></a></div>
+        <div className="hero-actions"><a className="button button-lime" href="#projects">Explore our work <span>↗</span></a><a className="text-link light-link" href="#about">Discover {COMPANY_NAME} <span>↓</span></a></div>
       </div>
       <div className="hero-bottom container"><span>REGISTERED GOVT &amp; PRIVATE CIVIL CONTRACTOR</span><span>VARANASI&nbsp;&nbsp; · &nbsp;&nbsp;INDIA</span></div>
       <a href="#about" className="scroll-cue" aria-label="Scroll to about section">↓</a>

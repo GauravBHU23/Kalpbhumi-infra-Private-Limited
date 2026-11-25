@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { AdminApiError, adminFetch, type AdminUser } from "../../lib/admin-api";
+import { COMPANY_WORDMARK } from "../../lib/site-config";
 
 /** "admin" -> /admin/* (administrators only), "staff" -> /staff/* (staff only). The two never link to each other. */
 export type Portal = "admin" | "staff";
@@ -177,7 +178,7 @@ export function AdminShell({ portal, children }: { portal: Portal; children: Rea
         <header className="adm-topbar">
           <Link className="adm-brand" href={base}>
             <span className="adm-brand-mark adm-brand-logo" aria-hidden="true"><img src="/kalpbhumi-logo.png" alt="" /></span>
-            <span><strong>KALPBHUMI</strong><small>{COPY[portal].short}</small></span>
+            <span><strong>{COMPANY_WORDMARK}</strong><small>{COPY[portal].short}</small></span>
           </Link>
           <div className="adm-topbar-right">
             <span className="adm-avatar adm-avatar-sm" aria-hidden="true">{initials(user.name)}</span>
@@ -191,7 +192,7 @@ export function AdminShell({ portal, children }: { portal: Portal; children: Rea
           <div className="adm-sidebar-head">
             <Link className="adm-brand" href={base}>
               <span className="adm-brand-mark adm-brand-logo" aria-hidden="true"><img src="/kalpbhumi-logo.png" alt="" /></span>
-              <span><strong>KALPBHUMI INFRA</strong><small>{COPY[portal].long}</small></span>
+              <span><strong>{COMPANY_WORDMARK} INFRA</strong><small>{COPY[portal].long}</small></span>
             </Link>
             <button className="adm-menu-btn" type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)}>✕</button>
           </div>

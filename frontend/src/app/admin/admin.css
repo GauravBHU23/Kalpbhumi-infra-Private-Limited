@@ -136,7 +136,6 @@ select.adm-input{appearance:auto}
 .adm-table td.adm-actions-cell .adm-btn+.adm-btn{margin-left:6px}
 .adm-pill{display:inline-block;padding:3px 9px;border-radius:20px;background:#eef0ea;color:#415044;font-size:12px;font-weight:700;white-space:nowrap}
 .adm-pill-ok{background:var(--adm-ok-bg);color:var(--adm-ok)}
-.adm-pill-warn{background:#fff6dc;color:#80600c}
 .adm-pill-off{background:#f1f1f1;color:#777}
 .adm-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#e5533d;margin-right:6px}
 

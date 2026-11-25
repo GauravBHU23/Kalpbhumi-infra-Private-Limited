@@ -21,6 +21,11 @@ class CompanyProfile(models.Model):
     def __str__(self):
         return self.company_name
 
+
+class SiteVisitCounter(models.Model):
+    total_visits = models.PositiveBigIntegerField(default=0)
+
+
 class Project(models.Model):
     class Category(models.TextChoices):
         ROADS = "roads", "Roads"
@@ -34,7 +39,6 @@ class Project(models.Model):
         THIRD_PARTY = "third_party", "Third-party"
 
     class Status(models.TextChoices):
-        ONGOING = "ongoing", "Ongoing"
         COMPLETED = "completed", "Completed"
         UPCOMING = "upcoming", "Upcoming"
 
@@ -45,7 +49,7 @@ class Project(models.Model):
     client_name = models.CharField(max_length=180, blank=True)
     client_type = models.CharField(max_length=20, choices=ClientType.choices, default=ClientType.PRIVATE)
     description = models.TextField()
-    status = models.CharField(max_length=20, choices=Status.choices)
+    status = models.CharField(max_length=20, choices=Status.choices, default=Status.COMPLETED)
     image_url = models.URLField(blank=True)
     start_date = models.DateField(null=True, blank=True)
     completion_date = models.DateField(null=True, blank=True)

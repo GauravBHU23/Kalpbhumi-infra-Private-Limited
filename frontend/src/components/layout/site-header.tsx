@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { COMPANY_NAME, COMPANY_WORDMARK } from "../../lib/site-config";
 
 const links = [
   ["Home", "#top"],
@@ -18,9 +19,9 @@ export function SiteHeader() {
   return (
     <header className="site-header" id="top">
       <div className="container nav-wrap">
-        <a className="brand" href="#top" aria-label="Kalpbhumi Infra home">
+        <a className="brand" href="#top" aria-label={`${COMPANY_NAME} home`}>
           <span className="brand-mark brand-logo" aria-hidden="true"><img src="/kalpbhumi-logo.png" alt="" /></span>
-          <span className="brand-copy"><strong>KALPBHUMI</strong><small>INFRA</small></span>
+          <span className="brand-copy" data-company-brand><strong>{COMPANY_WORDMARK}</strong><small>INFRA</small></span>
         </a>
         <button
           className="menu-toggle"

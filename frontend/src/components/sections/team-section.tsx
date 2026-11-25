@@ -1,5 +1,18 @@
 export function TeamSection() {
   return (
-    <section className="team-section section" id="team"><div className="container"><div className="section-heading reveal"><div><p className="eyebrow"><span></span> PEOPLE BEHIND THE PROGRESS</p><h2>Good people.<br /><em>Solid ground.</em></h2></div><p className="heading-aside">Our strongest foundation is the experience, care and expertise our people bring to every site.</p></div><div className="team-grid"><article className="team-card reveal"><div className="team-photo"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Portrait of Arvind Kumar, Managing Director" loading="lazy" /></div><div className="team-info"><div><h3>Arvind Kumar</h3><p>Managing Director</p></div><span>01</span></div></article><article className="team-card reveal"><div className="team-photo"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Portrait of Neha Singh, Chief Engineer" loading="lazy" /></div><div className="team-info"><div><h3>Neha Singh</h3><p>Chief Engineer</p></div><span>02</span></div></article><article className="team-card reveal"><div className="team-photo"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Portrait of Rohan Verma, Projects Director" loading="lazy" /></div><div className="team-info"><div><h3>Rohan Verma</h3><p>Projects Director</p></div><span>03</span></div></article><article className="team-card reveal"><div className="team-photo"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80" alt="Portrait of Priya Das, Design Lead" loading="lazy" /></div><div className="team-info"><div><h3>Priya Das</h3><p>Design Lead</p></div><span>04</span></div></article></div><div className="staff-groups"><article><span>ENGINEERING</span><p>Civil engineers | Structural engineers | Architects | Design coordinators</p></article><article><span>SITE OPERATIONS</span><p>Site engineers | Supervisors | Safety officers | Skilled site workers</p></article><article><span>BUSINESS SUPPORT</span><p>Procurement | Administration | Finance | Logistics | Supporting staff</p></article></div><p className="team-disclaimer">Leadership profiles are illustrative and should be replaced with verified company information before publication.</p></div></section>
+    <section className="team-section section" id="team">
+      <div className="container">
+        <div className="section-heading reveal">
+          <div>
+            <p className="eyebrow"><span></span> PEOPLE BEHIND THE PROGRESS</p>
+            <h2>Good people.<br /><em>Solid ground.</em></h2>
+          </div>
+          <p className="heading-aside">Meet the people who bring experience, care and expertise to every project.</p>
+        </div>
+        <div className="team-grid">
+          <p className="team-empty" role="status">Team profiles will appear here when published by the company.</p>
+        </div>
+      </div>
+    </section>
   );
 }

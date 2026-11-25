@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { LEGAL_CONTACT as C, LegalPage, type LegalSection } from "../../components/layout/legal-page";
+import { COMPANY_NAME } from "../../lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Kalpbhumi Infra",
-  description: "The terms that apply when you use the Kalpbhumi Infra website, enquiry form, tender listings and staff portal.",
+  title: `Terms & Conditions | ${COMPANY_NAME}`,
+  description: `The terms that apply when you use the ${COMPANY_NAME} website, enquiry form, tender listings and staff portal.`,
 };
 
 const sections: LegalSection[] = [
