@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Newly paved rural road</title>
+  <desc id="desc">A smooth new asphalt road runs through green fields toward distant hills beneath a clear sky.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#9bc5d0"/><stop offset=".72" stop-color="#e7dfbd"/><stop offset="1" stop-color="#e4cc92"/></linearGradient>
+    <linearGradient id="field" x2="0" y2="1"><stop stop-color="#819d58"/><stop offset="1" stop-color="#40583c"/></linearGradient>
+    <linearGradient id="road" x2="0" y2="1"><stop stop-color="#62696a"/><stop offset="1" stop-color="#30383a"/></linearGradient>
+    <linearGradient id="light" x2="1" y2="0"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1400v900H0z"/>
+  <circle cx="1080" cy="160" r="66" fill="#f7e7ad" fill-opacity=".75"/>
+  <path fill="#778d73" d="m0 470 190-135 145 102 176-157 177 149 164-107 174 126 155-116 219 150v250H0z"/>
+  <path fill="#61794e" d="m0 535 190-85 145 59 190-91 175 78 188-58 159 78 152-63 201 88v210H0z"/>
+  <path fill="url(#field)" d="M0 560h1400v340H0z"/>
+  <path fill="#9bb36e" d="M0 640q190-85 386-22t362-5q198-78 652 29v258H0z"/>
+  <path fill="url(#road)" d="M620 495h160l424 405H196z"/>
+  <path fill="#d7d0b5" d="M613 495h9L207 900h-11zm165 0h9l437 405h-12z"/>
+  <path fill="url(#light)" d="M620 495h160l424 405H196z"/>
+  <path fill="#f6f0d6" d="M694 500h12l-4 35h-12zm-12 67h18l-8 62h-22zm-20 103h29l-15 99h-36zm-29 161h43l-24 69h-54z"/>
+  <g fill="#294532"><path d="m70 628 46-125 48 125zm18 0h57v146H88zm105-24 35-96 37 96zm15 0h44v116h-44zm990-15 48-128 48 128zm21 0h58v153h-58zm104 27 36-97 38 97zm17 0h45v128h-45z"/></g>
+  <g fill="#d5ed63" fill-opacity=".65"><path d="m0 780 116-36 40 156H0zm1187-32 213 55v97h-167z"/></g>
+  <text x="700" y="852" fill="#fff" fill-opacity=".78" font-family="Arial,sans-serif" font-size="22" letter-spacing="7" text-anchor="middle">ROAD &amp; INFRASTRUCTURE</text>
+</svg>

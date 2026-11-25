@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Construction project image</title>
+  <desc id="desc">A simple architectural illustration used when a project photograph cannot load.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#31493b"/><stop offset="1" stop-color="#15271e"/></linearGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#d5ed63" stroke-opacity=".1"/></pattern>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1200v800H0z"/>
+  <path fill="url(#grid)" d="M0 0h1200v800H0z"/>
+  <path fill="#1d3327" stroke="#d5ed63" stroke-opacity=".65" stroke-width="4" d="M130 650V390l210-135 210 135v260zm420 0V315l235-150 235 150v335z"/>
+  <path fill="#d5ed63" fill-opacity=".18" d="M180 420h65v85h-65zm110-70h65v85h-65zm110 70h65v85h-65zm210-55h72v92h-72zm125-90h72v92h-72zm125 90h72v92h-72z"/>
+  <path fill="none" stroke="#d5ed63" stroke-width="5" d="M600 650h470M600 210h440M760 165v-72m-44 18h220m-155 0v54m80-54v54"/>
+  <text x="600" y="735" fill="#fff" fill-opacity=".82" font-family="Arial,sans-serif" font-size="25" letter-spacing="6" text-anchor="middle">KAMPANIK INFRA</text>
+</svg>
